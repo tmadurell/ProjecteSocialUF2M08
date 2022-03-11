@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "969093440443",
+    "project_id": "projectesocialuf2m08-ad132",
+    "storage_bucket": "projectesocialuf2m08-ad132.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:969093440443:android:b31f111bf72e42af98da9e",
+        "android_client_info": {
+          "package_name": "com.amadurell.projectesocialuf2m08"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "969093440443-bs5dh02jh8b6gre93ledbnlvfl6u86pc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhE7TLawKFHrCGeMi22Q48affLD_dkvMM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "969093440443-bs5dh02jh8b6gre93ledbnlvfl6u86pc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
