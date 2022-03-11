@@ -51,4 +51,9 @@
         android:name="com.amadurell.projectesocialuf2m08.MediaFragment"
         android:label="fragment_media"
         tools:layout="@layout/fragment_media" />
+    <fragment
+        android:id="@+id/usuaris"
+        android:name="com.amadurell.projectesocialuf2m08.Usuaris"
+        android:label="fragment_usuaris"
+        tools:layout="@layout/fragment_usuaris" />
 </navigation>

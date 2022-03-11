@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item
+    android:id="@+id/homeFragment"
+
+    android:title="Inici" />
+<item
+    android:id="@+id/recyclerContenidoFragment"
+
+    android:title="Continguts" />
+<item
+    android:id="@+id/recyclerValoracioFragment"
+
+    android:title="" />
+<item
+    android:id="@+id/recyclerBusquedaFragment"
+    android:icon="@android:drawable/ic_menu_search"
+    android:title="Cerca" />
+<item
+    android:id="@+id/recyclerCalculoFragment"
+
+    android:title="Calcular" />
+</menu>

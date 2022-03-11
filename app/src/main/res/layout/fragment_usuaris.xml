@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00BDFF"
+    tools:context=".Usuaris">
+
+    <!--Significat de les sigles: Base de datos de Películas,Series y Juegos en Internet-->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="267dp"
+        android:layout_height="142dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="82dp"
+        android:layout_marginEnd="35dp"
+        android:src="@drawable/logotip"
+        app:layout_constraintBottom_toTopOf="@+id/usuarioexistente"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/usuarioexistente"
+
+        android:layout_width="281dp"
+        android:layout_height="70dp"
+
+        android:layout_marginTop="92dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/vlineas"
+        android:text="Usuario existente"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/nuevousuario"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <Button
+        android:id="@+id/nuevousuario"
+
+        android:layout_width="281dp"
+        android:layout_height="70dp"
+
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="55dp"
+        android:text="Nuevo Usuario"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/usuarioexistente" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
