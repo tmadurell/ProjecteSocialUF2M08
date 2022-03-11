@@ -3,8 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/signInFragment">
+    app:startDestination="@id/benvinguts">
 
+
+    <fragment
+        android:id="@+id/benvinguts"
+        android:name="com.amadurell.projectesocialuf2m08.Benvinguts"
+        android:label="benvinguts"
+        tools:layout="@layout/benvinguts">
+        <action
+            android:id="@+id/action_benvingut_to_signInfragment"
+            app:destination="@id/signInFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/signInFragment"
