@@ -42,7 +42,7 @@ public class Benvinguts extends Fragment {
         arranque.finishedLoading.observe(getViewLifecycleOwner(), new Observer<Boolean>() {
             @Override
             public void onChanged(Boolean aBoolean) {
-                navController.navigate(R.id.action_benvingut_to_signInfragment);
+                navController.navigate(R.id.action_benvinguts_to_usuaris);
             }
         });
 

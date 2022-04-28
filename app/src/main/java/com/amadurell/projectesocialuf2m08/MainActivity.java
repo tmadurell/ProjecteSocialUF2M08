@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
@@ -26,28 +27,28 @@ import com.google.firebase.firestore.FirebaseFirestoreSettings;
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
-    private ActivityMainBinding binding;
+    ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView((binding = ActivityMainBinding.inflate(getLayoutInflater())).getRoot());
 
         FirebaseFirestore.getInstance().setFirestoreSettings(new FirebaseFirestoreSettings.Builder()
                 .setPersistenceEnabled(false)
                 .build());
 
 
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
 
-        setSupportActionBar(binding.appBarMain.toolbar);
-        binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+//        setSupportActionBar(binding.appBarMain.toolbar);
+//        binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//            }
+//        });
+
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         // Passing each menu ID as a set of Ids because each
@@ -59,9 +60,40 @@ public class MainActivity extends AppCompatActivity {
         )
                 .setOpenableLayout(drawer)
                 .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
-        NavigationUI.setupWithNavController(navigationView, navController);
+
+        NavController navController = ((NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment)).getNavController();
+        NavigationUI.setupWithNavController(binding.bottomNavView, navController);
+        NavigationUI.setupWithNavController(binding.navView, navController);
+        NavigationUI.setupWithNavController(binding.toolbar, navController, mAppBarConfiguration);
+
+        navController.addOnDestinationChangedListener((controller, destination, arguments) -> {
+
+            if(destination.getId() == R.id.benvinguts
+                    || destination.getId() == R.id.usuaris
+                    || destination.getId()  == R.id.signInFragment
+                    || destination.getId()  == R.id.registerFragment
+                    || destination.getId()  == R.id.profileFragment
+                    //|| destination.getId()  == R.id.felicitats
+
+            ){
+                binding.bottomNavView.setVisibility(View.GONE);
+                binding.navView.setVisibility(View.GONE);
+                binding.toolbar.setVisibility(View.GONE);
+
+            } else {
+                binding.bottomNavView.setVisibility(View.VISIBLE);
+                binding.navView.setVisibility(View.VISIBLE);
+                binding.toolbar.setVisibility(View.VISIBLE);
+            }
+            if (destination.getId() == R.id.recyclerBusquedaFragment){
+                binding.searchView.setVisibility(View.VISIBLE);
+                binding.searchView.setIconified(false);
+                binding.searchView.requestFocusFromTouch();
+            } else {
+                binding.searchView.setVisibility(View.GONE);
+            }
+
+        });
 
         View header = navigationView.getHeaderView(0);
         final ImageView photo = header.findViewById(R.id.photoImageView);

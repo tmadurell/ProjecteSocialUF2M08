@@ -12,8 +12,8 @@
         android:label="benvinguts"
         tools:layout="@layout/benvinguts">
         <action
-            android:id="@+id/action_benvingut_to_signInfragment"
-            app:destination="@id/signInFragment" />
+            android:id="@+id/action_benvinguts_to_usuaris"
+            app:destination="@id/usuaris" />
     </fragment>
 
     <fragment
@@ -55,5 +55,9 @@
         android:id="@+id/usuaris"
         android:name="com.amadurell.projectesocialuf2m08.Usuaris"
         android:label="fragment_usuaris"
-        tools:layout="@layout/fragment_usuaris" />
+        tools:layout="@layout/fragment_usuaris" >
+        <action
+            android:id="@+id/action_usuaris_to_signInFragment"
+            app:destination="@id/signInFragment" />
+    </fragment>
 </navigation>

@@ -7,7 +7,7 @@
     android:background="#00BDFF"
     tools:context=".Usuaris">
 
-    <!--Significat de les sigles: Base de datos de Películas,Series y Juegos en Internet-->
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="267dp"
