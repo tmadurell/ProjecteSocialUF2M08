@@ -53,9 +53,8 @@ public class MainActivity extends AppCompatActivity {
         NavigationView navigationView = binding.navView;
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-        mAppBarConfiguration = new AppBarConfiguration.Builder(
+        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.homeFragment,
-                R.id.profileFragment,
                 R.id.signOutFragment
         )
                 .setOpenableLayout(drawer)
@@ -64,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = ((NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment)).getNavController();
         NavigationUI.setupWithNavController(binding.bottomNavView, navController);
         NavigationUI.setupWithNavController(binding.navView, navController);
-        NavigationUI.setupWithNavController(binding.toolbar, navController, mAppBarConfiguration);
+        NavigationUI.setupWithNavController(binding.toolbar, navController, appBarConfiguration);
 
         navController.addOnDestinationChangedListener((controller, destination, arguments) -> {
 
@@ -72,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
                     || destination.getId() == R.id.usuaris
                     || destination.getId()  == R.id.signInFragment
                     || destination.getId()  == R.id.registerFragment
-                    || destination.getId()  == R.id.profileFragment
+
                     //|| destination.getId()  == R.id.felicitats
 
             ){
@@ -85,12 +84,13 @@ public class MainActivity extends AppCompatActivity {
                 binding.navView.setVisibility(View.VISIBLE);
                 binding.toolbar.setVisibility(View.VISIBLE);
             }
-            if (destination.getId() == R.id.recyclerBusquedaFragment){
-                binding.searchView.setVisibility(View.VISIBLE);
-                binding.searchView.setIconified(false);
-                binding.searchView.requestFocusFromTouch();
-            } else {
-                binding.searchView.setVisibility(View.GONE);
+
+            if (destination.getId() == R.id.newPostFragment
+                    || destination.getId()  == R.id.profileFragment
+
+            ){
+                binding.bottomNavView.setVisibility(View.GONE);
+                binding.navView.setVisibility(View.GONE);
             }
 
         });
