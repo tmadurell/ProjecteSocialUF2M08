@@ -25,16 +25,33 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Email"/>
-        <EditText
-            android:id="@+id/passwordEditText"
+
+
+        <com.google.android.material.textfield.TextInputLayout
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Password"/>
+            android:hint="Password"
+            android:background="@color/white"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/black"
+            android:layout_marginBottom="36dp">
+
+            <EditText
+                android:id="@+id/passwordEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:background="@color/white" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
         <Button
             android:id="@+id/emailSignInButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sign In"/>
+            android:text="Inicia la sessió" />
         <TextView
             android:id="@+id/gotoCreateAccountTextView"
             android:layout_width="match_parent"
@@ -45,7 +62,7 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_margin="48dp"
-            android:background="@color/black"/>
+            />
 
         <TextView
             android:layout_width="match_parent"
@@ -64,5 +81,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+
+        android:visibility="gone"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

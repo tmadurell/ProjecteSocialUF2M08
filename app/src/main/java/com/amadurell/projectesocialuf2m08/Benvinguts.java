@@ -37,7 +37,7 @@ public class Benvinguts extends Fragment {
         arranque = new ViewModelProvider(requireActivity()).get(com.amadurell.projectesocialuf2m08.Arranque.class);
         navController = Navigation.findNavController(view);
 
-        Glide.with(Benvinguts.this).load(R.drawable.loading).into(binding.carregant);
+//        Glide.with(Benvinguts.this).load(R.drawable.loading).into(binding.signInProgressBar);
 
         arranque.finishedLoading.observe(getViewLifecycleOwner(), new Observer<Boolean>() {
             @Override
