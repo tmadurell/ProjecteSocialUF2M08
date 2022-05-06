@@ -8,17 +8,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-        <Button
-            android:id="@+id/publishButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Publish"
-            android:layout_gravity="end"/>
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="78dp"
+            android:layout_height="58dp"
+            android:layout_gravity="center"
+            android:src="@drawable/logotip" />
+
         <EditText
             android:id="@+id/postContentEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="¿Qué pasa contigo?"
+            android:hint="¿Que està passant?"
             android:textSize="24sp"
             android:lines="6"
             android:gravity="top|left">
@@ -37,48 +39,54 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
+
                 <Button
                     android:id="@+id/imagen_galeria"
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
                     android:layout_marginLeft="8dp"
                     android:background="@drawable/image" />
                 <Button
                     android:id="@+id/video_galeria"
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
                     android:layout_marginLeft="8dp"
                     android:background="@drawable/movie" />
                 <Button
                     android:id="@+id/audio_galeria"
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
                     android:layout_marginLeft="8dp"
                     android:background="@drawable/audio"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+
+
                 <Button
                     android:id="@+id/camara_fotos"
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
                     android:layout_marginLeft="8dp"
                     android:background="@drawable/camera" />
                 <Button
                     android:id="@+id/camara_video"
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
                     android:layout_marginLeft="8dp"
                     android:background="@drawable/video" />
                 <Button
                     android:id="@+id/grabar_audio"
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
                     android:layout_marginLeft="8dp"
                     android:background="@drawable/mic" />
             </LinearLayout>
         </LinearLayout>
+
+        <Button
+            android:id="@+id/publishButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="25dp"
+            android:text="Publish" />
     </LinearLayout>
 </FrameLayout>
