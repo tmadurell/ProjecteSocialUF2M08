@@ -7,6 +7,12 @@
     android:orientation="vertical">
 
     <EditText
+        android:id="@+id/nomycognomEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nom i Cognom"/>
+
+    <EditText
         android:id="@+id/emailEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,12 +22,26 @@
         android:id="@+id/passwordEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Password"/>
+        android:hint="Contrasenya"/>
+
+    <EditText
+        android:id="@+id/repiteixpasswordEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Repetiu contrasenya"/>
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Al registrarte o iniciar sesión, aceptas nuestros Términos y Condiciones y la Política de Privacidad"
+        android:textColor="@color/black"
+        android:textSize="10sp" />
 
     <Button
         android:id="@+id/registerButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Create account"/>
+        android:text="Crear compte"/>
 
 </LinearLayout>

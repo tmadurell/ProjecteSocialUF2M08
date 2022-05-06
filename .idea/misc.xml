@@ -24,15 +24,17 @@
         <entry key="app/src/main/res/drawable/user.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/video.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/vlineas.xml" value="0.36615384615384616" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/app_bar_main.xml" value="0.13518518518518519" />
         <entry key="app/src/main/res/layout/benvinguts.xml" value="0.22" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.2" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_media.xml" value="0.17299898682877407" />
-        <entry key="app/src/main/res/layout/fragment_new_post.xml" value="0.21467391304347827" />
-        <entry key="app/src/main/res/layout/fragment_register.xml" value="0.16691995947315097" />
+        <entry key="app/src/main/res/layout/fragment_new_post.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.3125" />
+        <entry key="app/src/main/res/layout/fragment_register.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_sign_in.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_sign_out.xml" value="0.11944444444444445" />
         <entry key="app/src/main/res/layout/fragment_usuaris.xml" value="0.1" />
         <entry key="app/src/main/res/layout/nav_header_main.xml" value="0.18659420289855072" />
         <entry key="app/src/main/res/layout/viewholder_post.xml" value="0.17299898682877407" />

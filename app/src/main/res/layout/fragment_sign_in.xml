@@ -19,7 +19,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Login with email/password"/>
+            android:text="Inicieu sessió amb un correu electrònic/contrasenya"/>
+
         <EditText
             android:id="@+id/emailEditText"
             android:layout_width="match_parent"
@@ -27,12 +28,11 @@
             android:hint="Email"/>
 
 
-
         <com.google.android.material.textfield.TextInputLayout
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Password"
+            android:hint="Contrasenya"
             android:background="@color/white"
             app:passwordToggleEnabled="true"
             app:passwordToggleTint="@color/black"
@@ -57,7 +57,7 @@
             android:id="@+id/gotoCreateAccountTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Create account here"/>
+            android:text="Crea un compte aquí"/>
 
         <View
             android:layout_width="match_parent"
@@ -68,7 +68,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Login with your Google account"/>
+            android:text="Inicieu sessió amb la compte de Google"/>
         <com.google.android.gms.common.SignInButton
             android:id="@+id/googleSignInButton"
             android:layout_width="wrap_content"
