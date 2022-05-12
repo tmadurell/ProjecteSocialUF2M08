@@ -4,57 +4,71 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#00BDFF"
+    android:background="@drawable/fondo"
     tools:context=".Usuaris">
 
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="267dp"
-        android:layout_height="142dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="82dp"
-        android:layout_marginEnd="35dp"
+        android:id="@+id/logotip"
+        android:layout_width="247dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="75dp"
         android:src="@drawable/logotip"
-        app:layout_constraintBottom_toTopOf="@+id/usuarioexistente"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/usuariexistent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/usuarioexistente"
-
-        android:layout_width="281dp"
-        android:layout_height="70dp"
-
-        android:layout_marginTop="92dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/vlineas"
-        android:text="Usuario existente"
+    <TextView
+        android:id="@+id/minitext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="89dp"
+        android:text="Base de datos de Películas,Series y
+VideoJuegos en Internet"
         android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/nuevousuario"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toTopOf="@+id/usuariexistent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.571"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/logotip" />
 
     <Button
-        android:id="@+id/nuevousuario"
+        android:id="@+id/usuariexistent"
 
-        android:layout_width="281dp"
-        android:layout_height="70dp"
+        android:layout_width="270dp"
+        android:layout_height="65dp"
 
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="55dp"
-        android:text="Nuevo Usuario"
+        android:layout_marginTop="88dp"
+
+        android:text="Usuari existent"
         android:textColor="@color/black"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/nouusuari"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.569"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logotip" />
+
+    <Button
+        android:id="@+id/nouusuari"
+
+        android:layout_width="270dp"
+        android:layout_height="56dp"
+
+        android:layout_marginTop="45dp"
+
+        android:layout_marginBottom="196dp"
+        android:background="@drawable/lineas"
+        android:text="Nou Usuari"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:theme="@style/Theme.AppCompat.NoActionBar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintHorizontal_bias="0.569"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/usuarioexistente" />
+        app:layout_constraintTop_toBottomOf="@+id/usuariexistent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

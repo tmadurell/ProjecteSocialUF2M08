@@ -21,6 +21,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.*;
 
+
+import com.amadurell.projectesocialuf2m08.databinding.FragmentUsuarisBinding;
 import com.google.android.gms.auth.api.signin.*;
 import com.google.android.gms.common.*;
 import com.google.android.gms.common.api.ApiException;
@@ -29,8 +31,10 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.*;
 
+import com.amadurell.projectesocialuf2m08.databinding.FragmentSignInBinding;
 
 public class SignInFragment extends Fragment {
+    private FragmentSignInBinding binding;
 
     NavController navController;   // <-----------------
     //6. SignIn con email/password
@@ -48,12 +52,21 @@ public class SignInFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_sign_in, container, false);
+        return (binding = FragmentSignInBinding.inflate(inflater, container, false)).getRoot();
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        binding.equis.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_signInFragment_to_usuaris);
+            }
+
+        });
+
         navController = Navigation.findNavController(view);
         //6. SignIn con email/password
         emailEditText = view.findViewById(R.id.emailEditText);
@@ -65,12 +78,17 @@ public class SignInFragment extends Fragment {
         googleSignInButton = view.findViewById(R.id.googleSignInButton);
 
 
+
+
+
         view.findViewById(R.id.gotoCreateAccountTextView).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 navController.navigate(R.id.registerFragment);
             }
         });
+
+
         //6. SignIn con email/password
         mAuth = FirebaseAuth.getInstance();
 

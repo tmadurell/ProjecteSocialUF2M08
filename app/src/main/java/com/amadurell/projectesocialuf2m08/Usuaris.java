@@ -31,7 +31,7 @@ public class Usuaris extends Fragment {
 
 
         navController = Navigation.findNavController(view);
-        binding.usuarioexistente.setOnClickListener(new View.OnClickListener() {
+        binding.usuariexistent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 navController.navigate(R.id.action_usuaris_to_signInFragment);
@@ -39,7 +39,7 @@ public class Usuaris extends Fragment {
 
         });
 
-        view.findViewById(R.id.nuevousuario).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.nouusuari).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 navController.navigate(R.id.registerFragment);

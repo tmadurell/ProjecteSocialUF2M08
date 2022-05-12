@@ -2,8 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/fondoprincipal">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:id="@+id/signInForm"
@@ -18,8 +17,8 @@
 
         <ImageView
             android:id="@+id/equis"
-            android:layout_width="31dp"
-            android:layout_height="31dp"
+            android:layout_width="41dp"
+            android:layout_height="41dp"
             android:layout_gravity="left"
 
             android:src="@drawable/x"
@@ -33,7 +32,7 @@
             android:layout_height="107dp"
             android:layout_gravity="left"
             android:layout_marginHorizontal="18dp"
-            android:text="¡Benvingut/da de nou!"
+            android:text="¡Benvinguxx de nou!"
             android:textColor="@color/black"
             android:textSize="40sp" />
 
@@ -49,45 +48,38 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:layout_marginHorizontal="18dp"
-            android:text="Inicieu sessió amb un correu electrònic/contrasenya" />
+            android:layout_marginHorizontal="20dp"
+            android:text="Login with email/password" />
 
         <EditText
             android:id="@+id/emailEditText"
             android:layout_width="match_parent"
-            android:layout_height="47dp"
-            android:layout_marginHorizontal="18dp"
-            android:layout_weight="1"
-            android:background="@color/white"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
             android:hint="Email"
+            android:layout_weight="1"
 
             />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-
-            android:layout_marginHorizontal="18dp"
-            android:text="" />
 
         <com.google.android.material.textfield.TextInputLayout
+            android:layout_marginHorizontal="20dp"
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Contrasenya"
-            android:background="@color/white"
-            app:passwordToggleEnabled="true"
-            app:passwordToggleTint="@color/black"
             android:layout_marginBottom="36dp"
-            android:layout_marginHorizontal="18dp">
+            android:background="@color/white"
 
-            <EditText
-                android:id="@+id/passwordEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:background="@color/white" />
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/black">
 
+        <EditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:hint="Password"
+            />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
