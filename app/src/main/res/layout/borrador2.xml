@@ -14,19 +14,19 @@
         android:layout_weight="1">
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:gravity="center">
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:gravity="center"
+            android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/atras"
                 android:layout_width="31dp"
                 android:layout_height="31dp"
                 android:layout_gravity="left"
-                android:layout_marginVertical="5dp"
                 android:layout_marginHorizontal="5dp"
+                android:layout_marginVertical="5dp"
                 android:src="@drawable/flecha" />
 
 
@@ -47,15 +47,13 @@
                 android:text="" />
 
 
-
-
             <ImageView
                 android:id="@+id/equis"
                 android:layout_width="31dp"
                 android:layout_height="31dp"
                 android:layout_gravity="left"
-                android:layout_marginVertical="5dp"
                 android:layout_marginHorizontal="5dp"
+                android:layout_marginVertical="5dp"
                 android:src="@drawable/x" />
 
         </LinearLayout>
@@ -79,7 +77,6 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:hint="Email"
-        android:layout_weight="1"
         />
 
         <EditText
