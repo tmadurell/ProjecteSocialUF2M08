@@ -22,6 +22,7 @@
         android:id="@+id/passwordEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="textPassword"
 
         android:hint="Contrasenya"/>
 
@@ -29,6 +30,8 @@
         android:id="@+id/repiteixpasswordEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="textPassword"
+
         android:hint="Repetiu contrasenya"/>
 
     <TextView
