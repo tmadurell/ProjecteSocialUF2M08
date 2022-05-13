@@ -104,7 +104,6 @@
             android:hint="Contrasenya"
             android:textColorHint="@color/black"
             android:textColor="@color/black"
-            android:background="@color/white"
             app:passwordToggleEnabled="true"
             app:passwordToggleTint="@color/black"
             android:layout_marginBottom="36dp"
@@ -118,7 +117,13 @@
                 android:textColor="@color/black"
                 android:background="@color/white" />
 
-        </com.google.android.material.textfield.TextInputLayout>
+            <CheckBox
+                android:id="@+id/simpleCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:checked="false"
+                android:text="Simple CheckBox" />
+
 
 
         <Button
@@ -146,6 +151,7 @@
             android:textAlignment="center"
             android:text="¿No tens un compte? Crea un compte aquí" />
 
+        </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
             android:layout_width="match_parent"
