@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterFragment"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/atras"
+                android:layout_width="31dp"
+                android:layout_height="31dp"
+                android:layout_gravity="left"
+                android:layout_marginVertical="5dp"
+                android:layout_marginHorizontal="5dp"
+                android:src="@drawable/flecha" />
+
+
+            <TextView
+                android:id="@+id/pautadeadalt1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/pautadeadalt2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:text="" />
+
+
+
+
+            <ImageView
+                android:id="@+id/equis"
+                android:layout_width="31dp"
+                android:layout_height="31dp"
+                android:layout_gravity="left"
+                android:layout_marginVertical="5dp"
+                android:layout_marginHorizontal="5dp"
+                android:src="@drawable/x" />
+
+        </LinearLayout>
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="169dp"
+        android:layout_marginHorizontal="20dp"
+        android:src="@drawable/logotip" />
+
+    <EditText
+        android:id="@+id/nomycognomEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nom i Cognom"/>
+
+    <EditText
+        android:id="@+id/emailEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:hint="Email"
+        android:layout_weight="1"
+        />
+
+        <EditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:hint="Contrasenya"/>
+
+        <EditText
+            android:id="@+id/repiteixpasswordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Repetiu contrasenya"/>
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Al registrarte o iniciar sesión, aceptas nuestros Términos y Condiciones y la Política de Privacidad"
+            android:textColor="@color/black"
+            android:textSize="10sp" />
+
+
+        <Button
+        android:id="@+id/registerButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Crear compte"
+        android:layout_marginHorizontal="18dp"
+        android:textColor="@color/black"
+        android:background="@drawable/vlineas" />
+
+
+
+
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="18dp"
+            android:textAlignment="center"
+            android:text="Inicieu sessió amb la compte de Google" />
+
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/googleSignInButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="18dp" />
+
+        <TextView
+            android:id="@+id/pautafinal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+
+            android:layout_marginHorizontal="18dp"
+            android:text="" />
+
+
+</LinearLayout>

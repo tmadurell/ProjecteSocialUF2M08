@@ -1,159 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondoprincipal">
+    tools:context=".RegisterFragment"
+    android:orientation="vertical">
 
-    <LinearLayout
-        android:id="@+id/signInForm"
+    <EditText
+        android:id="@+id/nomycognomEditText"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_vertical|center_horizontal"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/equis"
-            android:layout_width="41dp"
-            android:layout_height="41dp"
-            android:layout_gravity="left"
-
-            android:src="@drawable/x"
-            app:layout_constraintHorizontal_bias="0.955"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:layout_width="260dp"
-            android:layout_height="107dp"
-            android:layout_gravity="left"
-            android:layout_marginHorizontal="18dp"
-            android:text="¡Benvinguxx de nou!"
-            android:textColor="@color/black"
-            android:textSize="40sp" />
-
-        <ImageView
-            android:layout_width="309dp"
-            android:layout_height="71dp"
-            android:layout_marginHorizontal="18dp"
-            android:src="@drawable/logotip" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-
-            android:layout_marginHorizontal="18dp"
-            android:text=" " />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-
-            android:layout_marginHorizontal="18dp"
-            android:text="Inicieu sessió amb un correu electrònic/contrasenya" />
-
-        <EditText
-            android:id="@+id/emailEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            android:hint="Email"
-            android:background="@color/white"
-            android:layout_weight="0.1"
-            />
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-
-            android:layout_marginHorizontal="18dp"
-            android:text=" " />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_marginHorizontal="20dp"
-
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="36dp"
-            android:background="@color/white"
-
-            app:passwordToggleEnabled="true"
-            app:passwordToggleTint="@color/black">
-
-            <EditText
-                android:id="@+id/passwordEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                android:background="@color/white"
-                android:hint="Password"
-                />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <Button
-            android:id="@+id/emailSignInButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="18dp"
-            android:text="Inicia la sessió"
-            android:textColor="@color/black" />
-
-        <TextView
-            android:id="@+id/contrasenyaoblidada"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:layout_marginHorizontal="20dp"
-            android:layout_weight="0.1"
-            android:text="¿Has oblidat la contrasenya?" />
-
-        <TextView
-            android:id="@+id/gotoCreateAccountTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="18dp"
-            android:layout_weight="0.7"
-            android:textAlignment="center"
-            android:text="¿No tens un compte? Crea un compte aquí" />
-
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="18dp"
-            android:textAlignment="center"
-            android:text="Inicieu sessió amb la compte de Google" />
-
-        <com.google.android.gms.common.SignInButton
-            android:id="@+id/googleSignInButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="18dp" />
-
-
-    </LinearLayout>
-
-    <ProgressBar
-        android:id="@+id/signInProgressBar"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:hint="Nom i Cognom"/>
 
-        />
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <EditText
+        android:id="@+id/emailEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"/>
+
+    <EditText
+        android:id="@+id/passwordEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:hint="Contrasenya"/>
+
+    <EditText
+        android:id="@+id/repiteixpasswordEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Repetiu contrasenya"/>
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Al registrarte o iniciar sesión, aceptas nuestros Términos y Condiciones y la Política de Privacidad"
+        android:textColor="@color/black"
+        android:textSize="10sp" />
+
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Crear compte"/>
+
+</LinearLayout>
