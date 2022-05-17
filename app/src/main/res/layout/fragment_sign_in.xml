@@ -119,7 +119,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="25dp"
                 android:checked="false"
-                android:text="Simple CheckBox" />
+                android:text="Recordar contrasenya" />
 
 
 

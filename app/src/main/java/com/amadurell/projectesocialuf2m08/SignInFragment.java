@@ -22,7 +22,6 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.*;
 
 
-import com.amadurell.projectesocialuf2m08.databinding.FragmentUsuarisBinding;
 import com.google.android.gms.auth.api.signin.*;
 import com.google.android.gms.common.*;
 import com.google.android.gms.common.api.ApiException;
