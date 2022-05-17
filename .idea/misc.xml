@@ -42,6 +42,7 @@
         <entry key="app/src/main/res/layout/fragment_usuaris.xml" value="0.25" />
         <entry key="app/src/main/res/layout/nav_header_main.xml" value="0.18659420289855072" />
         <entry key="app/src/main/res/layout/viewholder_post.xml" value="0.33" />
+        <entry key="app/src/main/res/menu/activity_main_drawer.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/menu/nav_menu.xml" value="0.35025641025641024" />
       </map>
     </option>

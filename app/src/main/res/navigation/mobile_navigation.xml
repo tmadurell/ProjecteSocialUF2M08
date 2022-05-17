@@ -71,4 +71,9 @@
             android:id="@+id/action_usuaris_to_signInFragment"
             app:destination="@id/signInFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/profilePrincipal"
+        android:name="com.amadurell.projectesocialuf2m08.ProfilePrincipal"
+        android:label="fragment_profile_principal"
+        tools:layout="@layout/fragment_profile_principal" />
 </navigation>

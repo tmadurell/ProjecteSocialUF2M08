@@ -5,18 +5,21 @@
     android:icon="@drawable/casaicono"
     android:title="" />
 <item
-    android:id="@+id/recyclerContenidoFragment"
+    android:id="@+id/recyclerCercaFragment"
     android:icon="@android:drawable/ic_menu_search"
     android:title=""/>
 <item
-    android:id="@+id/recyclerValoracioFragment"
+    android:id="@+id/recyclerPopularFragment"
+    android:icon="@drawable/foc"
 
     android:title="" />
 <item
-    android:id="@+id/recyclerBusquedaFragment"
+    android:id="@+id/recyclerFiltrefragment"
+    android:icon="@drawable/filtre"
     android:title=""/>
 <item
-    android:id="@+id/recyclerCalculoFragment"
+    android:id="@+id/profilePrincipal"
+    android:icon="@drawable/perfil"
 
-    android:title="Calcular" />
+    android:title="" />
 </menu>

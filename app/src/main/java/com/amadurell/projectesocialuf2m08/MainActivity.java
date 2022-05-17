@@ -54,8 +54,8 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.homeFragment
-
+                R.id.homeFragment,
+                R.id.profileFragment
         )
                 .setOpenableLayout(drawer)
                 .build();
@@ -88,10 +88,21 @@ public class MainActivity extends AppCompatActivity {
             if (destination.getId() == R.id.newPostFragment
                     || destination.getId()  == R.id.profileFragment
 
+
             ){
                 binding.bottomNavView.setVisibility(View.GONE);
                 binding.navView.setVisibility(View.GONE);
             }
+
+            if (destination.getId() ==  R.id.profilePrincipal
+
+
+            ){
+                binding.toolbar.setVisibility(View.GONE);
+
+            }
+
+
 
         });
 
