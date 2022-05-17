@@ -39,6 +39,7 @@
         <entry key="app/src/main/res/layout/fragment_register.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_sign_in.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_sign_out.xml" value="0.11944444444444445" />
+        <entry key="app/src/main/res/layout/fragment_tendencies.xml" value="0.1984375" />
         <entry key="app/src/main/res/layout/fragment_usuaris.xml" value="0.25" />
         <entry key="app/src/main/res/layout/nav_header_main.xml" value="0.18659420289855072" />
         <entry key="app/src/main/res/layout/viewholder_post.xml" value="0.33" />

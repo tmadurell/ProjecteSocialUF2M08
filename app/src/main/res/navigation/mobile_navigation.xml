@@ -45,12 +45,12 @@
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.amadurell.projectesocialuf2m08.ProfileFragment"
-        android:label="fragment_profile"
+        android:label="Perfil de usuari 👥"
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.amadurell.projectesocialuf2m08.HomeFragment"
-        android:label="fragment_home"
+        android:label="Benvinguts 👋"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/newPostFragment"
@@ -65,7 +65,7 @@
     <fragment
         android:id="@+id/usuaris"
         android:name="com.amadurell.projectesocialuf2m08.Usuaris"
-        android:label="fragment_usuaris"
+        android:label="Perfil de usuari 👥"
         tools:layout="@layout/fragment_usuaris" >
         <action
             android:id="@+id/action_usuaris_to_signInFragment"
@@ -74,6 +74,11 @@
     <fragment
         android:id="@+id/profilePrincipal"
         android:name="com.amadurell.projectesocialuf2m08.ProfilePrincipal"
-        android:label="fragment_profile_principal"
+        android:label="Perfil de usuari"
         tools:layout="@layout/fragment_profile_principal" />
+    <fragment
+        android:id="@+id/tendenciesfragment"
+        android:name="com.amadurell.projectesocialuf2m08.Tendencies"
+        android:label="Tendències 🔥"
+        tools:layout="@layout/fragment_home" />
 </navigation>

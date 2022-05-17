@@ -50,13 +50,17 @@ public class HomeFragment extends Fragment {
             }
         });
 
+
+        final boolean[] hihaquery = {false};
+        final Query[] query = {null};
+
         //Establecer el Adaptador en el RecyclerView
         RecyclerView postsRecyclerView = view.findViewById(R.id.postsRecyclerView);
 
 
 
         FirestoreRecyclerOptions<Post> options = new FirestoreRecyclerOptions.Builder<Post>()
-                .setQuery(query, Post.class)
+                .setQuery(getQuery(), Post.class)
                 .setLifecycleOwner(this)
                 .build();
 
@@ -70,7 +74,10 @@ public class HomeFragment extends Fragment {
     // class PostsAdapter extends FirestoreRecyclerAdapter ...
 
 
-    Query query = FirebaseFirestore.getInstance().collection("posts").limit(50);
+    Query getQuery()
+    {
+        return FirebaseFirestore.getInstance().collection("posts").limit(50);
+    }
 
     //Clase PostsAdapter
 
