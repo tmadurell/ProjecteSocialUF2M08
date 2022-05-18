@@ -114,7 +114,7 @@ public class HomeFragment extends Fragment {
 
             holder.contentTextView.setText(post.content);
 
-            String currentDateAndTime = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss").format(post.currentTime);
+            String currentDateAndTime = new SimpleDateFormat("dd-MM-yyyy HH:mm").format(post.currentTime);
             holder.dateTextView.setText(currentDateAndTime);
             // Gestion de likes
             final String postKey = getSnapshots().getSnapshot(position).getId();
