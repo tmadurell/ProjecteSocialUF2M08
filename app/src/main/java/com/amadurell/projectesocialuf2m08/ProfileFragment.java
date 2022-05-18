@@ -37,7 +37,7 @@ public class ProfileFragment extends Fragment {
 
         navController = Navigation.findNavController(view);  // <-----------------
 
-        photoImageView = view.findViewById(R.id.photoImageView);
+//        photoImageView = view.findViewById(R.id.photoImageView);
         displayNameTextView = view.findViewById(R.id.displayNameTextView);
         emailTextView = view.findViewById(R.id.emailTextView);
 
@@ -47,7 +47,7 @@ public class ProfileFragment extends Fragment {
             displayNameTextView.setText(user.getDisplayName());
             emailTextView.setText(user.getEmail());
 
-            Glide.with(requireView()).load(user.getPhotoUrl()).into(photoImageView);
+ //           Glide.with(requireView()).load(user.getPhotoUrl()).into(photoImageView);
         }
     }
 }
