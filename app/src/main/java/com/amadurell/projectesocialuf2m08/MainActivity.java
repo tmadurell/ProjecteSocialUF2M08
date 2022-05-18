@@ -56,7 +56,9 @@ public class MainActivity extends AppCompatActivity {
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.homeFragment,
                 R.id.tendenciesfragment,
-                R.id.profileFragment
+                R.id.profileFragment,
+                R.id.filtreMultimedia
+
         )
                 .setOpenableLayout(drawer)
                 .build();
@@ -72,8 +74,9 @@ public class MainActivity extends AppCompatActivity {
                     || destination.getId() == R.id.usuaris
                     || destination.getId()  == R.id.signInFragment
                     || destination.getId()  == R.id.registerFragment
+                    || destination.getId()  == R.id.contrasenyaOblidada
 
-                    //|| destination.getId()  == R.id.felicitats
+
 
             ){
                 binding.bottomNavView.setVisibility(View.GONE);

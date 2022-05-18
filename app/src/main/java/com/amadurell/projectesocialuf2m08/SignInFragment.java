@@ -66,6 +66,14 @@ public class SignInFragment extends Fragment {
 
         });
 
+        binding.contrasenyaoblidada.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_signInFragment_to_contrasenyaOblidada);
+            }
+
+        });
+
         navController = Navigation.findNavController(view);
         //6. SignIn con email/password
         emailEditText = view.findViewById(R.id.emailEditText);

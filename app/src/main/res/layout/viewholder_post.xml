@@ -1,69 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardUseCompatPadding="true">
+    android:layout_margin="10dp"
+    app:cardUseCompatPadding="true"
+    android:elevation="10dp"
+    android:outlineAmbientShadowColor="@color/teal_200"
+    >
+
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp">
-        <ImageView
-            android:id="@+id/photoImageView"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            app:srcCompat="@drawable/user" />
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="10dp"
+        >
+
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingStart="10dp">
-            <TextView
-                android:id="@+id/authorTextView"
-                style="@style/Base.TextAppearance.AppCompat.Small"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:text="Author"/>
-            <TextView
-                android:id="@+id/contentTextView"
-                android:textSize="20sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="Contenido"/>
-            <!-- P12 Firebase Storage P7 -->
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
             <ImageView
-                android:id="@+id/mediaImage"
-                android:layout_marginTop="10dp"
-                android:layout_width="196dp"
-                android:layout_height="196dp"
-                android:adjustViewBounds="true"/>
+                android:id="@+id/photoImageView"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:clickable="true"
+                app:srcCompat="@drawable/user" />
 
             <LinearLayout
-                android:id="@+id/likeLinearLayout"
-                android:layout_marginTop="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <ImageView
-                    android:id="@+id/likeImageView"
-                    app:srcCompat="@drawable/like_on"
-                    android:adjustViewBounds="true"
-                    android:layout_width="20dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"/>
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
                 <TextView
-                    android:id="@+id/numLikesTextView"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/authorTextView"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
-                    android:layout_gravity="center_vertical"
-                    android:text="200K"/>
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="8dp"
+                    android:text="Author"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="8dp"
+                    android:textSize="14sp" />
+
             </LinearLayout>
+
+
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/contentTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:paddingTop="10dp"
+            android:text="Contenido"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/mediaImage"
+            android:layout_width="196dp"
+            android:layout_height="196dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:adjustViewBounds="true" />
+
+
+
+        <ImageView
+            android:id="@+id/likeImageView"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:adjustViewBounds="true"
+            app:srcCompat="@drawable/like_on" />
+
+        <TextView
+            android:id="@+id/numLikesTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="4dp"
+            android:text="200K" />
+
+
     </LinearLayout>
 </androidx.cardview.widget.CardView>

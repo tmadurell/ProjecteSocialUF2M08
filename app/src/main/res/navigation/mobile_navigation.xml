@@ -24,6 +24,9 @@
         <action
             android:id="@+id/action_signInFragment_to_usuaris"
             app:destination="@id/usuaris" />
+        <action
+            android:id="@+id/action_signInFragment_to_contrasenyaOblidada"
+            app:destination="@id/contrasenyaOblidada" />
     </fragment>
     <fragment
         android:id="@+id/signOutFragment"
@@ -81,4 +84,38 @@
         android:name="com.amadurell.projectesocialuf2m08.Tendencies"
         android:label="Tendències 🔥"
         tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/contrasenyaOblidada"
+        android:name="com.amadurell.projectesocialuf2m08.ContrasenyaOblidada"
+        android:label="Heu oblidat la contrasenya?"
+        tools:layout="@layout/fragment_contrasenyaoblidada" >
+        <action
+            android:id="@+id/action_contrasenyaOblidada_to_signInFragment"
+            app:destination="@id/signInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/imatges"
+        android:name="com.amadurell.projectesocialuf2m08.Imatges"
+        android:label="Publicacions Filtre Imatges"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/audio"
+        android:name="com.amadurell.projectesocialuf2m08.Audio"
+        android:label="Publicacions Filtre Audios"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/videos"
+        android:name="com.amadurell.projectesocialuf2m08.Videos"
+        android:label="Publicacions Filtre Videos"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/filtreMultimedia"
+        android:name="com.amadurell.projectesocialuf2m08.FiltreMultimedia"
+        android:label="Publicacions Multimedia"
+        tools:layout="@layout/fragment_filtremultimedia" />
+    <fragment
+        android:id="@+id/cercaFragment"
+        android:name="com.amadurell.projectesocialuf2m08.CercaFragment"
+        android:label="fragment_cerca"
+        tools:layout="@layout/fragment_cerca" />
 </navigation>

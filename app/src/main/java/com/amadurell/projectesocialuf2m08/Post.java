@@ -1,5 +1,7 @@
 package com.amadurell.projectesocialuf2m08;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,6 +13,7 @@ public class Post {
     public String content;
     public String mediaUrl;
     public String mediaType;
+    public Date currentTime;
     //2.Gestió de Likes
     public Map<String, Boolean> likes = new HashMap<>();
 
@@ -25,5 +28,6 @@ public class Post {
         this.content = content;
         this.mediaUrl = mediaUrl;
         this.mediaType = mediaType;
+        this.currentTime = Calendar.getInstance().getTime();
     }
 }

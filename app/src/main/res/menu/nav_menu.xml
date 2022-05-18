@@ -5,7 +5,7 @@
     android:icon="@drawable/casaicono"
     android:title="" />
 <item
-    android:id="@+id/recyclerCercaFragment"
+    android:id="@+id/cercaFragment"
     android:icon="@android:drawable/ic_menu_search"
     android:title=""/>
 <item
@@ -14,7 +14,7 @@
 
     android:title="" />
 <item
-    android:id="@+id/recyclerFiltrefragment"
+    android:id="@+id/filtreMultimedia"
     android:icon="@drawable/filtre"
     android:title=""/>
 <item
