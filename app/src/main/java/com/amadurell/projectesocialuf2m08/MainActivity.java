@@ -99,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             if (destination.getId() ==  R.id.profilePrincipal
+                || destination.getId()  == R.id.cercaFragment
 
 
             ){
