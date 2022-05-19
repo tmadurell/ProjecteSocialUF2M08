@@ -21,7 +21,7 @@ public class Itunes {
     }
 
     class Fields{
-        StringValue nombre, elemento, imagen;
+        StringValue id_usuari, imatge, nom;
     }
 
     class StringValue{
@@ -30,13 +30,13 @@ public class Itunes {
 
     public static Api api = new Retrofit.Builder()
             //.baseUrl("https://itunes.apple.com/")
-            .baseUrl("https://firestore.googleapis.com/v1/projects/pokemones-1d7c6/databases/(default)/documents/")
+            .baseUrl("https://firestore.googleapis.com/v1/projects/projectesocialuf2m08-ad132/databases/(default)/documents/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(Api.class);
 
     public interface Api {
-        @GET("Pokemones/")
+        @GET("usuaris/")
         Call<Result> buscar(/*@Query("term") String texto*/);
     }
 }

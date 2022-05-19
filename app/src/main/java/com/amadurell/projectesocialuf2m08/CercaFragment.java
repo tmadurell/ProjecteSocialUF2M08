@@ -80,9 +80,9 @@ public class CercaFragment extends Fragment {
         public void onBindViewHolder(@NonNull ContenidoViewHolder holder, int position) {
             Itunes.Pokemon pokemon = pokemonList.documents.get(position);
 
-            holder.binding.title.setText(pokemon.fields.nombre.stringValue);
-            holder.binding.artist.setText(pokemon.fields.elemento.stringValue);
-            Glide.with(requireActivity()).load(pokemon.fields.imagen.stringValue).into(holder.binding.artwork);
+            holder.binding.title.setText(pokemon.fields.id_usuari.stringValue);
+            holder.binding.artist.setText(pokemon.fields.nom.stringValue);
+            Glide.with(requireActivity()).load(pokemon.fields.imatge.stringValue).into(holder.binding.artwork);
         }
 
         @Override
