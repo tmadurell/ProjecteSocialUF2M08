@@ -18,25 +18,31 @@
 
 
         <Button
-            style="@style/Widget.Design.FloatingActionButton"
             android:id="@+id/filtreimatges"
             android:layout_width="1dp"
+            android:layout_margin="1dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Image" android:textSize="12dp"/>
+
+            android:backgroundTint="@color/grey"
+
+            android:text="Imatges"
+            android:textSize="19dp"/>
         <Button
-            style="@style/Widget.Design.FloatingActionButton"
+            style="@style/Widget.Design.BottomNavigationView"
 
             android:id="@+id/filtreaudios"
             android:layout_width="1dp"
+            android:layout_margin="1dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Audio" android:textSize="12dp"/>
         <Button
-            style="@style/Widget.Design.FloatingActionButton"
+            style="@style/Widget.Design.BottomNavigationView"
 
             android:id="@+id/filtrevideos"
             android:layout_width="1dp"
+            android:layout_margin="1dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Video" android:textSize="12dp"/>
