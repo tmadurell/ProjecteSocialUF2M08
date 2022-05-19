@@ -95,17 +95,17 @@
     </fragment>
     <fragment
         android:id="@+id/imatges"
-        android:name="com.amadurell.projectesocialuf2m08.Imatges"
+        android:name="com.amadurell.projectesocialuf2m08.FiltreImatges"
         android:label="Publicacions Filtre Imatges"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/audio"
-        android:name="com.amadurell.projectesocialuf2m08.Audio"
+        android:name="com.amadurell.projectesocialuf2m08.FiltreAudio"
         android:label="Publicacions Filtre Audios"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/videos"
-        android:name="com.amadurell.projectesocialuf2m08.Videos"
+        android:name="com.amadurell.projectesocialuf2m08.FiltreVideos"
         android:label="Publicacions Filtre Videos"
         tools:layout="@layout/fragment_home" />
     <fragment

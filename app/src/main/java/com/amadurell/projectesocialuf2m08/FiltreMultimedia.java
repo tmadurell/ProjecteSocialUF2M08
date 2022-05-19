@@ -25,15 +25,16 @@ import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
-public class FiltreMultimedia extends Fragment {
+import java.util.Arrays;
+
+public class FiltreMultimedia extends HomeFragment {
 
 //    Yo me llamo Ralph!!*sonido de boli intensifies*
         private NavController navController;
         //P12 Firebase Storage P7
-        public AppViewModel appViewModel;
 
-        public FiltreMultimedia() {
-        }
+
+
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -78,23 +79,7 @@ public class FiltreMultimedia extends Fragment {
                 }
             });
 
-            final boolean[] hihaquery = {false};
-            final Query[] query = {null};
 
-            //Establecer el Adaptador en el RecyclerView
-            RecyclerView postsRecyclerView = view.findViewById(R.id.postsRecyclerView);
-
-
-
-            FirestoreRecyclerOptions<Post> options = new FirestoreRecyclerOptions.Builder<Post>()
-                    .setQuery(getQuery(), Post.class)
-                    .setLifecycleOwner(this)
-                    .build();
-
-            postsRecyclerView.setAdapter(new com.amadurell.projectesocialuf2m08.FiltreMultimedia.PostsAdapter(options));
-
-            //P12 Firebase Storage P7
-            appViewModel = new ViewModelProvider(requireActivity()).get(AppViewModel.class);
 
         }
 
@@ -103,86 +88,14 @@ public class FiltreMultimedia extends Fragment {
 
         Query getQuery()
         {
-            return FirebaseFirestore.getInstance().collection("posts").whereEqualTo("mediaType","image")
-                    .whereEqualTo("mediaType","video")
-                    .limit(50);
-
+            
+            //Esto es God Tier ya que filtra muchas cosas
+            return FirebaseFirestore.getInstance().collection("posts").whereIn("mediaType", Arrays.asList("video", "audio","image"));
 
             }
 
 
 
-        //Clase PostsAdapter
 
-        class PostsAdapter extends FirestoreRecyclerAdapter<Post, com.amadurell.projectesocialuf2m08.FiltreMultimedia.PostsAdapter.PostViewHolder> {
-            public PostsAdapter(@NonNull FirestoreRecyclerOptions<Post> options) {
-                super(options);
-            }
-
-            @NonNull
-            @Override
-            public com.amadurell.projectesocialuf2m08.FiltreMultimedia.PostsAdapter.PostViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                return new com.amadurell.projectesocialuf2m08.FiltreMultimedia.PostsAdapter.PostViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.viewholder_post, parent, false));
-            }
-
-
-            @Override
-            protected void onBindViewHolder(@NonNull com.amadurell.projectesocialuf2m08.FiltreMultimedia.PostsAdapter.PostViewHolder holder, int position, @NonNull final Post post) {
-                Glide.with(getContext()).load(post.authorPhotoUrl).circleCrop().into(holder.authorPhotoImageView);
-                holder.authorTextView.setText(post.author);
-                holder.contentTextView.setText(post.content);
-
-                // Gestion de likes
-
-                //3. Gestion de likes
-                final String postKey = getSnapshots().getSnapshot(position).getId();
-                final String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
-                if (post.likes.containsKey(uid))
-                    holder.likeImageView.setImageResource(R.drawable.like_on);
-                else
-                    holder.likeImageView.setImageResource(R.drawable.like_off);
-                holder.numLikesTextView.setText(String.valueOf(post.likes.size()));
-                holder.likeImageView.setOnClickListener(view -> {
-                    FirebaseFirestore.getInstance().collection("posts")
-                            .document(postKey)
-                            .update("likes." + uid, post.likes.containsKey(uid) ?
-                                    FieldValue.delete() : true);
-                });
-                //P12 Firebase Storage P7
-                // Miniatura de media
-                if (post.mediaUrl != null) {
-                    holder.mediaImageView.setVisibility(View.VISIBLE);
-                    if ("audio".equals(post.mediaType)) {
-                        Glide.with(requireView()).load(R.drawable.audio).centerCrop().into(holder.mediaImageView);
-                    } else {
-                        Glide.with(requireView()).load(post.mediaUrl).centerCrop().into(holder.mediaImageView);
-                    }
-                    holder.mediaImageView.setOnClickListener(view -> {
-                        appViewModel.postSeleccionado.setValue(post);
-                        navController.navigate(R.id.mediaFragment);
-                    });
-                } else {
-                    holder.mediaImageView.setVisibility(View.GONE);
-                }
-            }
-
-
-            //1.Gestió de Likes
-            class PostViewHolder extends RecyclerView.ViewHolder {
-                ImageView authorPhotoImageView, likeImageView, mediaImageView;
-                TextView authorTextView, contentTextView, numLikesTextView;
-                PostViewHolder(@NonNull View itemView) {
-                    super(itemView);
-                    likeImageView = itemView.findViewById(R.id.likeImageView);
-                    authorPhotoImageView = itemView.findViewById(R.id.photoImageView);
-                    mediaImageView = itemView.findViewById(R.id.mediaImage);
-                    authorTextView = itemView.findViewById(R.id.authorTextView);
-                    contentTextView = itemView.findViewById(R.id.contentTextView);
-                    numLikesTextView = itemView.findViewById(R.id.numLikesTextView);
-                }
-            }
-
-
-        }
 
     }
