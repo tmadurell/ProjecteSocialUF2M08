@@ -23,7 +23,6 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
-import com.amadurell.projectesocialuf2m08.databinding.FragmentSignInBinding;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -49,6 +48,7 @@ public class RegisterFragment extends Fragment {
     NavController navController;   // <-----------------
 
     private EditText emailEditText, passwordEditText;
+
     private Button registerButton;
     private FirebaseAuth mAuth;
 

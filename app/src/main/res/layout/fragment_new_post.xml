@@ -3,13 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NewPostFragment">
-    <LinearLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".NewPostFragment"
+    android:background="#E0E7EA">
+
+<LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="10dp">
 
-        <ImageView
+
+    <ImageView
             android:id="@+id/logo"
             android:layout_width="78dp"
             android:layout_height="58dp"
@@ -23,9 +28,20 @@
             android:hint="¿Que està passant?"
             android:textSize="24sp"
             android:lines="6"
-            android:gravity="top|left">
+            android:gravity="top|left"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:background="@color/white">
             <requestFocus />
+
         </EditText>
+
+    <TextView
+        android:id="@+id/pautafinal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="" />
+
         <!--P12 Firebase Storage P3-->
         <ImageView
             android:id="@+id/previsualizacion"
@@ -38,25 +54,33 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+
+                >
 
                 <Button
                     android:id="@+id/imagen_galeria"
                     android:layout_width="34dp"
                     android:layout_height="34dp"
                     android:layout_marginLeft="8dp"
-                    android:background="@drawable/image" />
+                    app:backgroundTint="#33C1FF"
+
+                    android:background="@drawable/image"
+                    />
                 <Button
                     android:id="@+id/video_galeria"
                     android:layout_width="34dp"
                     android:layout_height="34dp"
                     android:layout_marginLeft="8dp"
+                    app:backgroundTint="#33C1FF"
+
                     android:background="@drawable/movie" />
                 <Button
                     android:id="@+id/audio_galeria"
                     android:layout_width="34dp"
                     android:layout_height="34dp"
                     android:layout_marginLeft="8dp"
+                    app:backgroundTint="#33C1FF"
                     android:background="@drawable/audio"/>
 
 
@@ -65,18 +89,22 @@
                     android:layout_width="34dp"
                     android:layout_height="34dp"
                     android:layout_marginLeft="8dp"
+                    app:backgroundTint="#33C1FF"
                     android:background="@drawable/camera" />
                 <Button
                     android:id="@+id/camara_video"
                     android:layout_width="34dp"
                     android:layout_height="34dp"
                     android:layout_marginLeft="8dp"
+                    app:backgroundTint="#33C1FF"
                     android:background="@drawable/video" />
                 <Button
                     android:id="@+id/grabar_audio"
                     android:layout_width="34dp"
                     android:layout_height="34dp"
                     android:layout_marginLeft="8dp"
+
+                    app:backgroundTint="#33C1FF"
                     android:background="@drawable/mic" />
             </LinearLayout>
         </LinearLayout>
@@ -87,6 +115,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginTop="25dp"
-            android:text="Publish" />
+            android:backgroundTint="#33C1FF"
+            android:text="Publicar" />
     </LinearLayout>
 </FrameLayout>

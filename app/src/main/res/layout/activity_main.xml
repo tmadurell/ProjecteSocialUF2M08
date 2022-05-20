@@ -23,7 +23,7 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="#48A4B0"
+                android:background="#30C1FF"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
         </com.google.android.material.appbar.AppBarLayout>
@@ -47,7 +47,7 @@
                 android:id="@+id/bottom_nav_view"
                 android:layout_width="0dp"
                 android:layout_height="45dp"
-                android:background="#1B5A4B"
+                android:background="#30C1FF"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"

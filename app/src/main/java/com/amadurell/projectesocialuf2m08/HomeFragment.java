@@ -30,14 +30,12 @@ import com.google.firebase.firestore.Query;
 public class HomeFragment extends Fragment {
 
     NavController navController;
+    //P12 Firebase Storage P7
     public AppViewModel appViewModel;
-    SearchView searchView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-
         return inflater.inflate(R.layout.fragment_home, container, false);
     }
 
@@ -46,8 +44,7 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
 
-        /*searchView = view.findViewById(R.id.search);
-        searchView.setIconified(false);*/
+
 
         navController = Navigation.findNavController(view);  // <-----------------
         view.findViewById(R.id.gotoNewPostFragmentButton).setOnClickListener(new View.OnClickListener() {
@@ -59,10 +56,9 @@ public class HomeFragment extends Fragment {
 
 
 
-        final boolean[] hihaquery = {false};
-        final Query[] query = {null};
 
 
+        //Establecer el Adaptador en el RecyclerView
         RecyclerView postsRecyclerView = view.findViewById(R.id.postsRecyclerView);
 
 
@@ -99,25 +95,16 @@ public class HomeFragment extends Fragment {
 
         @Override
         protected void onBindViewHolder(@NonNull PostViewHolder holder, int position, @NonNull final Post post) {
-
-            int photo;
-            if (!post.authorPhotoUrl.equals("")) {
-/*
-                post.authorPhotoUrl="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.emmegi.co.uk%2Fcontact-emmegi-for-air-blast-oil-coolers%2Fuser-icon%2F&psig=AOvVaw2fyyUttZ99AkucX72Qb15O&ust=1645284021696000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPDDo-HGifYCFQAAAAAdAAAAABAc";
-*/
-/*
-                Glide.with(getContext()).load("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.emmegi.co.uk%2Fcontact-emmegi-for-air-blast-oil-coolers%2Fuser-icon%2F&psig=AOvVaw2fyyUttZ99AkucX72Qb15O&ust=1645284021696000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPDDo-HGifYCFQAAAAAdAAAAABAc").circleCrop().into(holder.authorPhotoImageView);
-*/
-                Glide.with(getContext()).load(post.authorPhotoUrl).circleCrop().into(holder.authorPhotoImageView);
-
-            }
-
-
+            Glide.with(getContext()).load(post.authorPhotoUrl).circleCrop().into(holder.authorPhotoImageView);
+            holder.authorTextView.setText(post.author);
             holder.contentTextView.setText(post.content);
 
             String currentDateAndTime = new SimpleDateFormat("dd-MM-yyyy HH:mm").format(post.currentTime);
             holder.dateTextView.setText(currentDateAndTime);
+
             // Gestion de likes
+
+            //3. Gestion de likes
             final String postKey = getSnapshots().getSnapshot(position).getId();
             final String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
             if (post.likes.containsKey(uid))
@@ -126,10 +113,20 @@ public class HomeFragment extends Fragment {
                 holder.likeImageView.setImageResource(R.drawable.like_off);
             holder.numLikesTextView.setText(String.valueOf(post.likes.size()));
             holder.likeImageView.setOnClickListener(view -> {
+
+                //Extra opcional
+                FirebaseFirestore.getInstance().collection("posts")
+                        .document(postKey)
+                        .update( "num_likes", post.likes.containsKey(uid) ?
+                                FieldValue.increment(-1) : FieldValue.increment(+1));
+                //Extra opcional
+
                 FirebaseFirestore.getInstance().collection("posts")
                         .document(postKey)
                         .update("likes." + uid, post.likes.containsKey(uid) ?
                                 FieldValue.delete() : true);
+
+
             });
 
 

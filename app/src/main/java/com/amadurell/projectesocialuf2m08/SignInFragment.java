@@ -33,9 +33,10 @@ import com.google.firebase.auth.*;
 import com.amadurell.projectesocialuf2m08.databinding.FragmentSignInBinding;
 
 public class SignInFragment extends Fragment {
-    private FragmentSignInBinding binding;
 
+    private FragmentSignInBinding binding;
     NavController navController;   // <-----------------
+
     //6. SignIn con email/password
     private EditText emailEditText, passwordEditText;
     private Button emailSignInButton;
@@ -177,19 +178,6 @@ public class SignInFragment extends Fragment {
         activityResultLauncher.launch(googleSignInClient.getSignInIntent());
     }
 
-    //
-//    @Override
-//    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-//        super.onActivityResult(requestCode, resultCode, data);
-//
-//        if (requestCode == 12345) {
-//            try {
-//                firebaseAuthWithGoogle(GoogleSignIn.getSignedInAccountFromIntent(data).getResult(ApiException.class));
-//            } catch (ApiException e) {
-//                Log.e("ABCD", "signInResult:failed code=" + e.getStatusCode());
-//            }
-//        }
-//    }
 
     private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
         if(acct == null) return;

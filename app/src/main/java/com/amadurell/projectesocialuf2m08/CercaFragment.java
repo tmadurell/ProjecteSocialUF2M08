@@ -7,16 +7,12 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.*;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.*;
 import android.view.*;
 import android.widget.SearchView;
 
-import com.amadurell.projectesocialuf2m08.databinding.ViewholderContenidoBinding;
+import com.amadurell.projectesocialuf2m08.databinding.ViewholderUsuarisBinding;
 import com.bumptech.glide.Glide;
 import com.amadurell.projectesocialuf2m08.databinding.FragmentCercaBinding;
-
-
-import java.util.List;
 
 public class CercaFragment extends Fragment {
     private FragmentCercaBinding binding;
@@ -31,7 +27,7 @@ public class CercaFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        ItunesViewModel itunesViewModel = new ViewModelProvider(this).get(ItunesViewModel.class);
+        UsuarisViewModel usuarisViewModel = new ViewModelProvider(this).get(UsuarisViewModel.class);
 
         binding.texto.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -39,7 +35,7 @@ public class CercaFragment extends Fragment {
 
             @Override
             public boolean onQueryTextChange(String s) {
-                itunesViewModel.buscar(s);
+                usuarisViewModel.buscar(s);
                 return false;
             }
         });
@@ -48,9 +44,9 @@ public class CercaFragment extends Fragment {
         ContenidosAdapter contenidosAdapter = new ContenidosAdapter();
         binding.recyclerviewContenidos.setAdapter(contenidosAdapter);
 
-        itunesViewModel.respuestaMutableLiveData.observe(getViewLifecycleOwner(), new Observer<Itunes.Result>() {
+        usuarisViewModel.respuestaMutableLiveData.observe(getViewLifecycleOwner(), new Observer<UsuarisBBDD.Result>() {
             @Override
-            public void onChanged(Itunes.Result respuesta) {
+            public void onChanged(UsuarisBBDD.Result respuesta) {
                 contenidosAdapter.establecerListaContenido(respuesta);
                 // respuesta.results.forEach(r -> Log.e("ABCD", r.artistName + ", " + r.trackName + ", " + r.artworkUrl100));
             }
@@ -59,26 +55,26 @@ public class CercaFragment extends Fragment {
     }
 
     static class ContenidoViewHolder extends RecyclerView.ViewHolder {
-        ViewholderContenidoBinding binding;
+        ViewholderUsuarisBinding binding;
 
-        public ContenidoViewHolder(@NonNull ViewholderContenidoBinding binding) {
+        public ContenidoViewHolder(@NonNull ViewholderUsuarisBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
         }
     }
 
     class ContenidosAdapter extends RecyclerView.Adapter<ContenidoViewHolder>{
-        Itunes.Result pokemonList;
+        UsuarisBBDD.Result pokemonList;
 
         @NonNull
         @Override
         public ContenidoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            return new ContenidoViewHolder(ViewholderContenidoBinding.inflate(getLayoutInflater(), parent, false));
+            return new ContenidoViewHolder(ViewholderUsuarisBinding.inflate(getLayoutInflater(), parent, false));
         }
 
         @Override
         public void onBindViewHolder(@NonNull ContenidoViewHolder holder, int position) {
-            Itunes.Pokemon pokemon = pokemonList.documents.get(position);
+            UsuarisBBDD.Pokemon pokemon = pokemonList.documents.get(position);
 
             holder.binding.title.setText(pokemon.fields.id_usuari.stringValue);
             holder.binding.artist.setText(pokemon.fields.nom.stringValue);
@@ -90,7 +86,7 @@ public class CercaFragment extends Fragment {
             return pokemonList == null ? 0 : pokemonList.documents.size();
         }
 
-        void establecerListaContenido(Itunes.Result pokemonList){
+        void establecerListaContenido(UsuarisBBDD.Result pokemonList){
             this.pokemonList = pokemonList;
             notifyDataSetChanged();
         }

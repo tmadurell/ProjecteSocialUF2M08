@@ -13,7 +13,7 @@ import androidx.navigation.Navigation;
 
 import com.amadurell.projectesocialuf2m08.databinding.FragmentUsuarisBinding;
 
-public class Usuaris extends Fragment {
+public class UsuarisFragment extends Fragment {
 
     private FragmentUsuarisBinding binding;
     private NavController navController;

@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-
+        android:layout_margin="10dp"
         >
 
 
@@ -29,23 +29,31 @@
             android:text="Imatges"
             android:textSize="19dp"/>
         <Button
-            style="@style/Widget.Design.BottomNavigationView"
 
             android:id="@+id/filtreaudios"
             android:layout_width="1dp"
             android:layout_margin="1dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Audio" android:textSize="12dp"/>
+
+            android:backgroundTint="@color/grey"
+
+
+            android:text="Audio"
+            android:textSize="19dp"/>
         <Button
-            style="@style/Widget.Design.BottomNavigationView"
 
             android:id="@+id/filtrevideos"
             android:layout_width="1dp"
             android:layout_margin="1dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Video" android:textSize="12dp"/>
+
+            android:backgroundTint="@color/grey"
+
+
+            android:text="Video"
+            android:textSize="19dp"/>
     </LinearLayout>
 
     <FrameLayout xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -67,7 +75,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
-            android:layout_margin="@dimen/fab_margin"
+            android:layout_margin="10dp"
             app:srcCompat="@android:drawable/ic_input_add" />
 
     </FrameLayout>

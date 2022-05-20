@@ -16,6 +16,8 @@ public class Post {
     public Date currentTime;
     //2.Gestió de Likes
     public Map<String, Boolean> likes = new HashMap<>();
+    //Extra opcional
+    public int num_likes;
 
     // Constructor vacio requerido por Firestore
     public Post() {}
@@ -29,5 +31,6 @@ public class Post {
         this.mediaUrl = mediaUrl;
         this.mediaType = mediaType;
         this.currentTime = Calendar.getInstance().getTime();
+        this.num_likes = 0;
     }
 }
