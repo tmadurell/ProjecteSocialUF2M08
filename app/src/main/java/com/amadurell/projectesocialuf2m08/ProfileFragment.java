@@ -13,12 +13,14 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import com.amadurell.projectesocialuf2m08.databinding.FragmentProfileBinding;
 import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 
 public class ProfileFragment extends Fragment {
+    FragmentProfileBinding binding;
     //8. Perfil de usuario
     NavController navController;   // <-----------------
     ImageView photoImageView;
@@ -37,7 +39,7 @@ public class ProfileFragment extends Fragment {
 
         navController = Navigation.findNavController(view);  // <-----------------
 
-//        photoImageView = view.findViewById(R.id.photoImageView);
+        photoImageView = view.findViewById(R.id.photoImageView);
         displayNameTextView = view.findViewById(R.id.displayNameTextView);
         emailTextView = view.findViewById(R.id.emailTextView);
 
@@ -46,6 +48,7 @@ public class ProfileFragment extends Fragment {
         if(user != null){
             displayNameTextView.setText(user.getDisplayName());
             emailTextView.setText(user.getEmail());
+            if (user.getPhotoUrl()!=null) Glide.with(requireView()).load(user.getPhotoUrl()).into(photoImageView);
 
  //           Glide.with(requireView()).load(user.getPhotoUrl()).into(photoImageView);
         }

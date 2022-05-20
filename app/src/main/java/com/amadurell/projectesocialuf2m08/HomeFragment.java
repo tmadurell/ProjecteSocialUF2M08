@@ -82,7 +82,8 @@ public class HomeFragment extends Fragment {
 
     Query getQuery()
     {
-        return FirebaseFirestore.getInstance().collection("posts").limit(50);
+        return FirebaseFirestore.getInstance().collection("posts").limit(50)
+                .orderBy("currentTime", Query.Direction.DESCENDING);
     }
 
     class PostsAdapter extends FirestoreRecyclerAdapter<Post, PostsAdapter.PostViewHolder> {

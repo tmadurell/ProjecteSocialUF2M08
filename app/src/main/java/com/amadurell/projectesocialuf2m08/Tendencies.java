@@ -14,6 +14,6 @@ public class Tendencies extends HomeFragment{
     @Override
     Query getQuery() {
 
-        return FirebaseFirestore.getInstance().collection("posts").limit(50).orderBy("likes", Query.Direction.DESCENDING);
+        return FirebaseFirestore.getInstance().collection("posts").limit(50).orderBy("likes").orderBy("currentTime");
     }
 }
